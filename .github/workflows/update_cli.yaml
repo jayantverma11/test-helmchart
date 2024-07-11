@@ -21,7 +21,7 @@ jobs:
 
       - name: Generate updatecli.yaml
         run: |
-          output=$(python3 generate_updatecli_yaml_file.py)
+          output=$(python3 .github/workflows/generate_updatecli_yaml_file.py)
           echo "$output"      
 
       - name: Install updatecli
