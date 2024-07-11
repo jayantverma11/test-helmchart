@@ -14,4 +14,5 @@ targets:
     spec:
       file: templates/eks/inputs.tf
       matchPattern: "(variable \"NGINX_CHART_VERSION\" {\\s*default = \")([^\"]+)(\")"
-      replacePattern: "$1{{ source }}$3"      
+      replacePattern: '$1{{ source }}$2'
+      source: "{{ version }}"  
