@@ -23,4 +23,5 @@ jobs:
         run: |
           updatecli version
           pwd
+          cat templates/eks/inputs.tf
           
