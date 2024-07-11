@@ -20,5 +20,7 @@ jobs:
           mv updatecli /usr/local/bin
 
       - name: check update cli version
-        run: updatecli version
+        run: |
+          updatecli version
+          pwd
           
