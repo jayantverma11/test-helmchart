@@ -4,8 +4,8 @@ sources:
     name: "Get Latest Helm Chart Version"
     kind: "helmChart"
     spec:
-      url: "https://kubernetes.github.io/ingress-nginx"
-      name: "ingress-nginx"
+      url: https://kubernetes.github.io/ingress-nginx
+      name: ingress-nginx
       version: latest
 
 targets:
@@ -13,6 +13,5 @@ targets:
     name: "Update Helm Chart Version in Codebase"
     kind: "terraform"
     spec:
-      file: "templates/eks/inputs.tf"
-      key: "variable.NGINX_CHART_VERSION.default"
-      value: "{{ .helm.Version }}"
+      file: templates/eks/inputs.tf
+      key: variable.NGINX_CHART_VERSION.default
