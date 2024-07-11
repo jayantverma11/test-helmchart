@@ -13,6 +13,17 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install Python
+        # Ensure Python is installed (if not already available on the runner)
+        run: |
+          apt-get update
+          apt-get install -y python3
+
+      - name: Generate updatecli.yaml
+        run: |
+          output=$(python3 generate_updatecli_yaml_file.py)
+          echo "$output"      
+
       - name: Install updatecli
         run: |
           curl -LO https://github.com/updatecli/updatecli/releases/download/v0.80.0/updatecli_Linux_x86_64.tar.gz
