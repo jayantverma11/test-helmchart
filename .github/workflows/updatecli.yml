@@ -10,7 +10,7 @@ sources:
 targets:
   updateChartVersion:
     name: "Update Helm Chart Version in Codebase"
-    kind: "terraform/file"
+    kind: terraform/file
     spec:
       file: templates/eks/inputs.tf
       key: variable.NGINX_CHART_VERSION.default
