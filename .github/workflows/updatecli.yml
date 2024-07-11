@@ -2,7 +2,7 @@
 sources:
   helm:
     name: "Get Latest Helm Chart Version"
-    kind: helmchart
+    kind: helmChart
     pattern: "*"
     spec:
       url: https://kubernetes.github.io/ingress-nginx
