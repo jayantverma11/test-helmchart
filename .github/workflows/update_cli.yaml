@@ -27,4 +27,7 @@ jobs:
 
       - name: Run updatecli
         run: updatecli apply --config .github/workflows/updatecli.yml          
-          
+
+      - name: cat update cli version
+        run: |
+          cat templates/eks/inputs.tf          
