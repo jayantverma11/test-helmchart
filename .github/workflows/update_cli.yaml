@@ -18,3 +18,7 @@ jobs:
           curl -LO https://github.com/updatecli/updatecli/releases/download/v0.9.0/updatecli_Linux_x86_64.tar.gz
           tar -zxvf updatecli_Linux_x86_64.tar.gz
           mv updatecli /usr/local/bin
+
+      - name: check update cli version
+        run: updatecli version
+          
