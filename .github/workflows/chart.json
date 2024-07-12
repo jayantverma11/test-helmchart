@@ -1,0 +1,50 @@
+charts - [
+  {
+    "chart": "aws-efs-csi-driver",
+    "repository": "https://kubernetes-sigs.github.io/aws-efs-csi-driver/",
+    "version": "2.2.9"
+    "tf_version_var_name": "EFS_DRIVER_CHART_VERSION"
+  },
+  {
+    "chart": "ingress-nginx",
+    "repository": "https://kubernetes.github.io/ingress-nginx",
+    "version": "4.3.0"
+    "tf_version_var_name": "NGINX_CHART_VERSION"
+  },
+  {
+    "chart": "cluster-autoscaler",
+    "repository": "https://kubernetes.github.io/autoscaler",
+    "version": "9.24.0"
+    "tf_version_var_name": "CLUSTER_AUTOSCALER_HELM_CHART_VERSION"
+  },
+  {
+    "chart": "cert-manager",
+    "repository": "https://charts.jetstack.io",
+    "version": "v1.14.7"
+    "tf_version_var_name": "CERTMANAGER_VERSION"
+  },
+  {
+    "chart": "metrics-server",
+    "repository": "https://kubernetes-sigs.github.io/metrics-server",
+    "version": "3.9.0"
+    "tf_version_var_name": "METRICS_SERVER_VERSION"
+  },
+  {
+    "chart": "aws-load-balancer-controller",
+    "repository": "https://aws.github.io/eks-charts",
+    "version": "1.5.5"
+    "tf_version_var_name": "AWS_LOAD_BALANCER_CONTROLLER_VERSION"
+  },
+  {
+    "chart": "datadog-crds",
+    "repository": "https://helm.datadoghq.com",
+    "version": "0.4.7"
+    "tf_version_var_name": "DATADOG_CRDS_VERSION"
+  },
+  {
+    "chart": "datadog",
+    "repository": "https://helm.datadoghq.com",
+    "version": "3.1.11"
+    "tf_version_var_name": "DATADOG_VERSION"
+  }
+]
