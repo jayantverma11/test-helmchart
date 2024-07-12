@@ -3,7 +3,7 @@ import yaml
 import os
 
 # Path to the charts.json file
-charts_json_path = '.github/workflows/charts.json'
+charts_json_path = '.github/workflows/chart.json'
 
 # Check if the file exists and is not empty
 if not os.path.exists(charts_json_path):
