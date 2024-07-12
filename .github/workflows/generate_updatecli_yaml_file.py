@@ -2,7 +2,7 @@ import json
 import yaml
 
 # Path to the charts.json file
-charts_json_path = '.github/workflows/charts.json'
+charts_json_path = '.github/workflows/chart.json'
 
 # Load chart data from JSON file
 with open(charts_json_path, 'r') as json_file:
