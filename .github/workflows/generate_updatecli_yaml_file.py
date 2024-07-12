@@ -1,12 +1,22 @@
 import json
 import yaml
+import os
 
 # Path to the charts.json file
-charts_json_path = '.github/workflows/chart.json'
+charts_json_path = '.github/workflows/charts.json'
+
+# Check if the file exists and is not empty
+if not os.path.exists(charts_json_path):
+    raise FileNotFoundError(f"The file {charts_json_path} does not exist.")
+if os.path.getsize(charts_json_path) == 0:
+    raise ValueError(f"The file {charts_json_path} is empty.")
 
 # Load chart data from JSON file
 with open(charts_json_path, 'r') as json_file:
-    charts = json.load(json_file)
+    try:
+        charts = json.load(json_file)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Failed to parse JSON file: {e}")
 
 yaml_content = {
     "sources": {},
@@ -37,7 +47,8 @@ for chart in charts:
     }
 
 # Write the YAML content to a file
-with open(".github/workflows/updatecli.yaml", "w") as yaml_file:
+updatecli_yaml_path = ".github/workflows/updatecli.yaml"
+with open(updatecli_yaml_path, "w") as yaml_file:
     yaml.dump(yaml_content, yaml_file, default_flow_style=False)
 
-print("updatecli.yaml file created successfully.")
+print(f"updatecli.yaml file created successfully at {updatecli_yaml_path}.")
