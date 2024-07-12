@@ -24,6 +24,9 @@ yaml_content = {
 }
 
 for chart in charts:
+    if not all(key in chart for key in ('chart', 'repository', 'tf_version_var_name')):
+        raise KeyError("Each chart entry must contain 'chart', 'repository', and 'tf_version_var_name' keys.")
+        
     source_name = f"get_{chart['chart']}_version"
     target_name = f"update_{chart['chart']}_version"
 
