@@ -1,8 +1,11 @@
 import json
 import yaml
 
+# Path to the charts.json file
+charts_json_path = '.github/workflows/charts.json'
+
 # Load chart data from JSON file
-with open('charts.json', 'r') as json_file:
+with open(charts_json_path, 'r') as json_file:
     charts = json.load(json_file)
 
 yaml_content = {
@@ -34,7 +37,7 @@ for chart in charts:
     }
 
 # Write the YAML content to a file
-with open("updatecli.yaml", "w") as yaml_file:
+with open(".github/workflows/updatecli.yaml", "w") as yaml_file:
     yaml.dump(yaml_content, yaml_file, default_flow_style=False)
 
 print("updatecli.yaml file created successfully.")
