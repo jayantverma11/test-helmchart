@@ -4,6 +4,17 @@ baseHelmChart: &baseHelm
   spec:
     version: latest
 
+scms:
+  default:
+    kind: github
+    spec:
+      user: jayantverma11
+      owner: jayantverma11
+      repository: test-helmchart
+      token: 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
+      username: jayantverma11
+      branch: main
+
 sources:
   chart-cluster-autoscaler:
     <<: *baseHelm
@@ -21,4 +32,15 @@ targets:
     spec:
       file: templates/eks/inputs.tf
       path: variable.cluster-autoscaler.default
+
+actions:
+  default:
+    title: Open a GitHub pull request with new helm chart version
+    kind: github/pullrequest
+    scmID: default
+    target:
+      - chart-cluster-autoscaler
+    spec:
+      automerge: false
+      mergemethod: squash
       
