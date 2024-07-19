@@ -6,14 +6,14 @@ baseHelmChart: &baseHelm
 
 scms:
   default:
-    kind: github
+    kind: "github"
     spec:
-      user: jayantverma11
-      owner: jayantverma11
+      user: "jayantverma11"
+      owner: "jayantverma11"
       repository: test-helmchart
-      token: '{{ requiredEnv "TOKEN" }}'
-      username: jayantverma11
-      branch: main
+      token: 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
+      username: "jayantverma11"
+      branch: "main"
 
 sources:
   chart-cluster-autoscaler:
