@@ -11,7 +11,7 @@ scms:
       user: "jayantverma11"
       owner: "jayantverma11"
       repository: test-helmchart
-      token: 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
+      token:
       username: "jayantverma11"
       branch: "main"
 
