@@ -1,0 +1,24 @@
+baseHelmChart: &baseHelm
+  kind: helmchart
+  pattern: "*"
+  spec:
+    version: latest
+
+sources:
+  chart-cluster-autoscaler:
+    <<: *baseHelm
+    spec:
+      name: cluster-autoscaler
+      url: https://kubernetes.github.io/autoscaler
+
+conditions: {}
+
+targets:
+  chart-cluster-autoscaler:
+    name: Update cluster-autoscaler version in input.tf
+    kind: terraform/file
+    sourceid: chart-cluster-autoscaler
+    spec:
+      file: input.tf
+      path: variable.cluster-autoscaler.default
+      
