@@ -19,6 +19,6 @@ targets:
     kind: terraform/file
     sourceid: chart-cluster-autoscaler
     spec:
-      file: input.tf
+      file: templates/eks/inputs.tf
       path: variable.cluster-autoscaler.default
       
