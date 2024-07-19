@@ -10,8 +10,8 @@ scms:
     spec:
       user: jayantverma11
       owner: jayantverma11
-      repository: https://github.com/jayantverma11/test-helmchart
-      token: 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
+      repository: test-helmchart
+      token: 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
       username: jayantverma11
       branch: main
 
