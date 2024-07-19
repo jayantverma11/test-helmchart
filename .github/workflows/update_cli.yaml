@@ -11,22 +11,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Python
-        # Ensure Python is installed (if not already available on the runner)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python3
-
-      - name: Generate updatecli.yaml
-        run: |
-          output=$(python3 .github/workflows/generate_updatecli_yaml_file.py)
-          echo "$output" 
-
-      - name: Print updatecli.yaml file
-        run: |
-          cat updatecli.yaml          
+        uses: actions/checkout@v2        
 
       - name: Install updatecli
         run: |
@@ -34,15 +19,6 @@ jobs:
           tar -zxvf updatecli_Linux_x86_64.tar.gz
           mv updatecli /usr/local/bin
 
-      - name: check update cli version
-        run: |
-          updatecli version
-          pwd
-          cat templates/eks/inputs.tf
-
       - name: Run updatecli
-        run: updatecli apply --config .github/workflows/updatecli.yml          
-
-      - name: cat update cli version
-        run: |
-          cat templates/eks/inputs.tf          
+        run: updatecli apply --config .github/updatecli/updatecli.yaml          
+       
