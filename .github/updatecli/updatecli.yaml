@@ -6,14 +6,29 @@ baseHelmChart: &baseHelm
 
 scms:
   default:
-    kind: github
+    kind: "github"
     spec:
-      user: jayantverma11
-      owner: jayantverma11
-      repository: test-helmchart
-      token: ${{ secrets.TOKEN }}
-      username: jayantverma11
-      branch: main
+      user: "jayantverma11"
+      owner: "jayantverma11"
+      repository: "test-helmchart"
+      token: "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"
+      username: "jayantverma11"
+      branch: "main"
+
+actions:
+  helm-charts:
+    kind: "github"
+    scmid: "helm_chart"
+    target:
+      - chart-cluster-autoscaler
+    spec:
+      automerge: false
+      description: "Prepend description"
+      draft: true
+      labels:
+        - "dependencies"
+        - "epinio"
+      title: "Pull Request Title"
 
 sources:
   chart-cluster-autoscaler:
@@ -27,19 +42,10 @@ conditions: {}
 targets:
   chart-cluster-autoscaler:
     name: Update cluster-autoscaler version in input.tf
+    scmid: helm_chart
     kind: terraform/file
     sourceid: chart-cluster-autoscaler
     spec:
       file: templates/eks/inputs.tf
       path: variable.cluster-autoscaler.default
 
-actions:
-  default:
-    title: Open a GitHub pull request with new helm chart version
-    kind: github/pullrequest
-    scmid: default
-    target:
-      - chart-cluster-autoscaler
-    spec:
-      automerge: false
-      mergemethod: squash
