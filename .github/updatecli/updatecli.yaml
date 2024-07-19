@@ -11,14 +11,9 @@ scms:
       user: jayantverma11
       owner: jayantverma11
       repository: test-helmchart
-      token: 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
+      token: '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'
       username: jayantverma11
       branch: main
-      pullrequest:
-        title: "Update Helm charts"
-        description: "This PR updates Helm charts to the latest version."
-        labels:
-          - auto-update
 
 sources:
   chart-cluster-autoscaler:
@@ -37,3 +32,14 @@ targets:
     spec:
       file: templates/eks/inputs.tf
       path: variable.cluster-autoscaler.default
+
+actions:
+  default:
+    title: Open a GitHub pull request with new helm chart version
+    kind: github/pullrequest
+    scmid: default
+    target:
+      - chart-cluster-autoscaler
+    spec:
+      automerge: false
+      mergemethod: squash
