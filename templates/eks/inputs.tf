@@ -3,7 +3,7 @@ variable "cluster-autoscaler" {
 }
 
 variable "ingress-nginx" {
-  default = "4.3.0"
+  default = "4.11.1"
 }
 
 variable "metrics-server" {
