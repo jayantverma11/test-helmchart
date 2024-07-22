@@ -1,3 +1,3 @@
 variable "cluster-autoscaler" {
-  default = "9.21.0"
+  default = "9.37.0"
 }
