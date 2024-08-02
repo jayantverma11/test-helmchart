@@ -1,6 +1,6 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "19.15.4"
+  version = "v20.20.0"
   # other configuration
 }
 
