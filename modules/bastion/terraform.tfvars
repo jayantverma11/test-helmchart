@@ -1,0 +1,2 @@
+INSTANCE_TYPE = "t2.medium"
+INSTANCE_SIZE = 200gb
