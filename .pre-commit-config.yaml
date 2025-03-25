@@ -3,7 +3,6 @@ repos:
   - repo: https://github.com/antonbabenko/pre-commit-terraform
     rev: v1.97.4  # Check for latest version
     hooks:
-      - id: terraform_fmt
       - id: terraform_tflint
 
   # Basic Pre-Commit Hooks
