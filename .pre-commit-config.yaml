@@ -1,7 +1,7 @@
 repos:
   # Terraform Hooks
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.85.4  # Check for latest version
+    rev: v1.97.4  # Check for latest version
     hooks:
       - id: terraform_fmt
       - id: terraform_validate
