@@ -22,6 +22,11 @@ jobs:
         with:
           terraform_version: 1.7.2  # Use latest stable version
 
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: latest
+
       - name: Install pre-commit
         run: pip install pre-commit
 
