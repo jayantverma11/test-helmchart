@@ -3,23 +3,27 @@ name: Update Helm Charts
 on: 
   push:
     branches:
-      - main  # Specify the branches you want this workflow to run on push
+      - main  # Run this workflow on push to main
 
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
 
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.7.2  # Use latest stable version
+
       - name: Install pre-commit
         run: pip install pre-commit
 
       - name: Run pre-commit checks
         run: pre-commit run --all-files
-        
-       
