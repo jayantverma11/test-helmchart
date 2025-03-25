@@ -1,9 +1,7 @@
 name: Update Helm Charts
 
-on: 
-  push:
-    branches:
-      - main  # Run this workflow on push to main
+on:
+  pull_request:
 
 jobs:
   pre-commit:
