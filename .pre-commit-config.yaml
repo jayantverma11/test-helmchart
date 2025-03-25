@@ -4,11 +4,3 @@ repos:
     rev: v1.97.4  # Check for latest version
     hooks:
       - id: terraform_tflint
-
-  # Basic Pre-Commit Hooks
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
-    hooks:
-      - id: trailing-whitespace
-      - id: check-yaml
-      - id: check-json
