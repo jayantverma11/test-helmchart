@@ -1,0 +1,19 @@
+repos:
+  # Terraform Hooks
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.84.1  # Check for latest version
+    hooks:
+      - id: terraform_fmt  # Format Terraform files
+      - id: terraform_validate  # Validate Terraform
+      - id: terraform_tflint  # Lint Terraform
+      - id: terraform_tfsec  # Security checks for Terraform
+
+  # Basic Pre-Commit Hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: detect-private-key  # Prevents committing private keys
